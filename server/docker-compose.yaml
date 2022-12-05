@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - ./squema.sql:/docker-entrypoint-initdb.d/squema.sql
+    env_file:
+      - ./db.env
+    networks:
+      - back
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 15s
+
+
+  app:
+    build: .
+    command: npm start
+    ports:
+      - "8080:8080"
+    volumes:
+      - /app
+    depends_on:
+       db:
+        condition: service_healthy
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    links:
+      - db
+    restart: always
+    networks:
+      - back
+
+
+networks:
+  back:
+    driver: bridge
