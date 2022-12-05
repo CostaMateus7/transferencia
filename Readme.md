@@ -8,6 +8,7 @@ Essa é uma plataforma financeira que possibilita o cadastro e login do usuário
 
 **Link do vídeo de apresentação do projeto:**
 
+https://drive.google.com/file/d/1_E_BBgNXihf_tRmEXlGefn81DTKvjjyn/view?usp=sharing
 
 
 **Instruções para o funcionamento da aplicação**
