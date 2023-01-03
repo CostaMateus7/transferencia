@@ -49,29 +49,35 @@ https://drive.google.com/file/d/1_E_BBgNXihf_tRmEXlGefn81DTKvjjyn/view?usp=shari
 **Comandos** 
 
 - Para baixar o repositório vá ao terminal e cole a seguinte instrução:
-
+```bash
 git clone https://github.com/CostaMateus7/transferencia.git
-
+```
 
 - Vá até o diretório /transferencia e digite o seguinte comando:
 
 
 *Dispositivos em geral*
 
+```bash
 docker compose -f server/docker-compose.yaml up -d --build &&  docker compose -f client/docker-compose.yaml up -d
+```
 
 *Linux*
 
+```bash
 sudo docker compose -f server/docker-compose.yaml up -d --build && sudo  docker compose -f client/docker-compose.yaml up -d
+```
 
 - Confira se os containers estão ativos com o comando: 
-
-docker ps 
+```bash
+docker ps
+```
 
 - Vá ao navegador e acesse
 
+```bash
 http://localhost:3000 
-
+```
 
 **Conteúdos utilizados e estudados:** 
 
